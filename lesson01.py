@@ -46,6 +46,7 @@ print([i.upper() for i in greeting])
 
 print([num ** 2 for num in range(51) if num % 2 != 0])
 
+
 # *****************************************************************
 # function
 
@@ -53,15 +54,21 @@ print([num ** 2 for num in range(51) if num % 2 != 0])
 def display_list(list):
     print(list)
 
+
 list = [1, 2, 3, 4, 5]
 display_list(list)
+
+
 # - створити функцію яка приймає три числа та виводить та повертає найбільше.
 def number_max(a, b, c):
     num_max = max(a, b, c)
     print("Найбільше число:", num_max)
     return num_max
 
+
 number_max(10, 20, 15)
+
+
 # - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
 def min_max(*numbers):
     num_min = min(numbers)
@@ -69,33 +76,45 @@ def min_max(*numbers):
     print("Найбільше число:", num_max)
     return num_min
 
+
 min_max(5, 2, 8, 1, -3)
+
 
 # - створити функцію яка повертає найбільше число з ліста
 def max_num(list):
     num = max(list)
     return num
 
+
 list = [1, 2, 3, 4, 5]
 print("Найбільше число в списку:", max_num(list))
+
+
 # - створити функцію яка повертає найменьше число з ліста
 def min_num(list):
     num = min(list)
     return num
 
+
 list = [1, 2, -3, 4, -5]
 print("Найменьше число в списку:", min_num(list))
+
+
 # - створити функцію яка приймає ліст чисел та складає значення елементів ліста та повертає його.
 def sum_list(list):
     sum_l = sum(list)
     return sum_l
 
+
 lll = [11, 2, 33, 4, 5]
 print("Сума елементів списку:", sum_list(lll))
+
+
 # - створити функцію яка приймає ліст чисел та повертає середнє арифметичне йогоно значень.
 def amg(list):
     arithmetic_mean = sum(list) / len(list)
     return arithmetic_mean
+
 
 num_list = [1, 2, 3, 4, 5]
 print("Середнє арифметичне значень списку:", amg(num_list))
@@ -123,11 +142,10 @@ def empty_sq(d):
         print()
 
 
-
-# empty_sq(input("Введіть сторону квадрата: "))
-
+empty_sq(int(input('Введіть сторону квадрата:')))
 
 empty_sq(6)  # Приклад для квадрата зі стороною 6
+
 
 # 3) вывести табличку множення за допомогою цикла while
 def tub_mult(rows, columns):
@@ -140,10 +158,9 @@ def tub_mult(rows, columns):
         print()
         row += 1
 
-tub_mult(10, 10)  # Таблиця множення 10x10
 
+tub_mult(10, 10)  # Таблиця множення 10x10
 
 # 4) переробити це завдання під меню
 
 # ????????
-
