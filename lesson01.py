@@ -114,8 +114,15 @@ print(list03)
 
 # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
 def empty_sq(d):
-    for _ in range(d):
-        print('*' * d)
+    row = 1
+    while row <= d:
+        column = 1
+        while column <= d:
+            print("*", end='\t')
+            column += 1
+        print()
+        row += 1
+
 
 
 empty_sq(6)  # Приклад для квадрата зі стороною 6
