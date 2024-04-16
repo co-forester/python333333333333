@@ -121,14 +121,23 @@ print("Середнє арифметичне значень списку:", amg(
 
 # 1)Дан list:
 list03 = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
+
+
 # - знайти мін число
-print('min number = ', min(list03))
+def find_min_from_list(list):
+    print('min number = ', min(list))
+
+
 # - видалити усі дублікати
-print(set(list03))
+def remove_duplicates(list):
+    print(set(list))
+
+
 # - замінити кожне 4-те значення на 'X'
-for i in range(3, len(list03), 4):
-    list03[i] = 'X'
-print(list03)
+def to_x(list):
+    for i in range(3, len(list), 4):
+        list[i] = 'X'
+    print(list)
 
 
 # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
@@ -163,4 +172,25 @@ tub_mult(10, 10)  # Таблиця множення 10x10
 
 # 4) переробити це завдання під меню
 
-# ????????
+while True:
+    print('  1) Знайти min число')
+    print('  2) Видалити дублікати')
+    print('  3) Замінити кожне 4-те на X')
+    print('  4) Вивести квадрат')
+    print('  5) Вивести табличку множення')
+    print('  9) Вихід')
+
+    choice = input(" Зробіть свій вибір: ")
+
+    if choice == '1':
+        find_min_from_list(list03)
+    elif choice == '2':
+        remove_duplicates(list03)
+    elif choice == '3':
+        to_x(list03)
+    elif choice == '4':
+        empty_sq(int(input('Введіть сторону квадрата:')))
+    elif choice == '5':
+        tub_mult(9, 9)
+    elif choice == '9':
+        break
