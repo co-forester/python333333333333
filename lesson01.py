@@ -118,7 +118,7 @@ def empty_sq(d):
     while row <= d:
         column = 1
         while column <= d:
-            print("*", end='\t')
+            print("*  *", end='\t')
             column += 1
         print()
         row += 1
