@@ -114,16 +114,17 @@ print(list03)
 
 # 2) вивести на екран пустий квадрат з "*" сторона якого вказана як агрумент функції
 def empty_sq(d):
-    row = 1
-    while row <= d:
-        column = 1
-        while column <= d:
-            print("*  *", end='\t')
-            column += 1
+    for row in range(d):
+        for column in range(d):
+            if row == 0 or row == d - 1 or column == 0 or column == d - 1:
+                print('*', end=' ')
+            else:
+                print(' ', end=' ')
         print()
-        row += 1
 
 
+
+# empty_sq((input("Введіть сторону квадрата: "))
 
 empty_sq(6)  # Приклад для квадрата зі стороною 6
 
@@ -144,3 +145,4 @@ tub_mult(10, 10)  # Таблиця множення 10x10
 # 4) переробити це завдання під меню
 
 # ????????
+
