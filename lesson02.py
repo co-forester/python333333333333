@@ -7,13 +7,31 @@ from typing import Callable, List, Tuple
 def create_todo_list():
     todo_list = []
 
-    def add_task(todo):
+    def add_task():
+        todo = input('впишіть нагадування: ')
         todo_list.append(todo)
 
     def get_tasks():
         return todo_list
 
     return add_task, get_tasks
+
+# Приклад:
+add_task, get_tasks = create_todo_list()
+
+while True:
+    print('щоб додати завдання натисніть 1')
+    print('щоб вивести список завдань натисніть 2')
+    print('якщо бажаєте закінчити натисніть 6 ')
+
+    choice = input(" Зроби свій вибір: ")
+
+    if choice == '1':
+        add_task()
+    elif choice == '2':
+        print("Список справ:", get_tasks())
+    elif choice == '6':
+        break
 
 # 2) протипізувати перше завдання
 def create_todo_list02() -> Tuple[Callable[[str], None], Callable[[], List[str]]]:
@@ -73,6 +91,10 @@ def greet(name):
 greet("Оксана")
 greet("Сергій")
 greet("Данііл")
+
+
+
+
 
 
 
