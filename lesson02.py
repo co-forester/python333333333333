@@ -78,7 +78,10 @@ def count_calls(func):
     def wrapper(*args, **kwargs):
         wrapper.calls += 1
         result = func(*args, **kwargs)
-        print("Функція була викликана", wrapper.calls, "разів")
+
+        #print("Функція була викликана", wrapper.calls, "разів")
+        print(f"Функція '{func.__name__}' була викликана {wrapper.calls} разів")  # форматування рядка
+
         return result
     wrapper.calls = 0
     return wrapper
@@ -86,7 +89,9 @@ def count_calls(func):
 # Приклад:
 @count_calls
 def greet(name):
-    print("Привіт,", name, "!")
+
+    #print("Привіт,", name, "!")
+    print(f"Привіт, {name}!")  # форматування рядка
 
 greet("Оксана")
 greet("Сергій")
