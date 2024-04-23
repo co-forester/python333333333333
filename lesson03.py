@@ -96,4 +96,89 @@ Cinderella.show_count()   # 3
 
 prince = Prince("Олександр", 30, 35)
 prince.find_cinderella([cinderella1, cinderella2, cinderella3])   # Знайдена попелюшка: Анна
+
+"""1) Створити абстрактний клас Printable якій буде описувати абстрактний метод print()
+2) Створити класи Book та Magazine в кожного в конструкторі змінна name, та якій наслідується від класу Printable
+3) Створити клас Main в якому буде:
+- змінна класу printable_list яка буде зберігати книжки та журнали
+- метод add за допомогою якого можна додавати екземпляри класів в список і робити перевірку чи то що передають є класом Book або Magazine инакше ігрнорувати додавання
+- метод show_all_magazines якій буде виводити всі журнали викликаючи метод print абстрактного класу
+- метод show_all_books якій буде виводити всі книги викликаючи метод print абстрактного класу
+
+Приклад:
+
+Main.add(Magazine('Magazine1'))
+    Main.add(Book('Book1'))
+    Main.add(Magazine('Magazine3'))
+    Main.add(Magazine('Magazine2'))
+    Main.add(Book('Book2'))
+
+    Main.show_all_magazines()
+    print('-' * 40)
+    Main.show_all_books()
+    
+
+для перевірки класів використовуємо метод isinstance, приклад:
+
+
+user = User('Max', 15)
+shape = Shape()
+
+isinstance(max, User) -> True
+isinstance(shape, User) -> False"""
+from abc import ABC, abstractmethod
+
+class Printable(ABC):
+    @abstractmethod
+    def print(self):
+        pass
+
+class Book(Printable):
+    def __init__(self, name):
+        self.name = name
+
+    def print(self):
+        print(f"Книга: {self.name}")
+
+class Magazine(Printable):
+    def __init__(self, name):
+        self.name = name
+
+    def print(self):
+        print(f"Журнал: {self.name}")
+
+class Main:
+    printable_list = []
+
+    @classmethod
+    def add(cls, item):
+        if isinstance(item, (Book, Magazine)):
+            cls.printable_list.append(item)
+        else:
+            print("Помилка: Можна додавати лише книги та журнали")
+
+    @classmethod
+    def show_all_magazines(cls):
+        print("Всі журнали:")
+        for item in cls.printable_list:
+            if isinstance(item, Magazine):
+                item.print()
+
+    @classmethod
+    def show_all_books(cls):
+        print("Всі книги:")
+        for item in cls.printable_list:
+            if isinstance(item, Book):
+                item.print()
+
+# Приклад використання
+Main.add(Magazine('Журнал 1'))
+Main.add(Book('Книга 1'))
+Main.add(Magazine('Журнал 2'))
+Main.add(Magazine('Журнал 3'))
+Main.add(Book('Книга 2'))
+
+Main.show_all_magazines()
+print('-' * 40)
+Main.show_all_books()
         
