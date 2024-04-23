@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 """Створити клас Rectangle:
 -він має приймати дві сторони x, y
 -описати поведінку на арифметичні методи:
@@ -92,6 +93,8 @@ cinderella1 = Cinderella("Анна", 20, 35)
 cinderella2 = Cinderella("Марія", 22, 36)
 cinderella3 = Cinderella("Ольга", 25, 34)
 
+print('-' * 39)
+print('-' * 39)
 Cinderella.show_count()   # 3
 
 prince = Prince("Олександр", 30, 35)
@@ -126,7 +129,6 @@ shape = Shape()
 
 isinstance(max, User) -> True
 isinstance(shape, User) -> False"""
-from abc import ABC, abstractmethod
 
 class Printable(ABC):
     @abstractmethod
@@ -171,14 +173,19 @@ class Main:
             if isinstance(item, Book):
                 item.print()
 
-# Приклад використання
+# Приклад використання:
 Main.add(Magazine('Журнал 1'))
 Main.add(Book('Книга 1'))
 Main.add(Magazine('Журнал 2'))
 Main.add(Magazine('Журнал 3'))
 Main.add(Book('Книга 2'))
+Main.add(Book('Книга 3'))
+Main.add(Book('Книга 4'))
 
+print('-' * 39)
+print('-' * 39)
 Main.show_all_magazines()
-print('-' * 40)
+print('-' * 39)
 Main.show_all_books()
-        
+print('-' * 39)
+print('-' * 39)
