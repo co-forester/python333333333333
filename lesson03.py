@@ -12,6 +12,7 @@ class Rectangle:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.area = x * y
 
     def area(self):
         return self.x * self.y
