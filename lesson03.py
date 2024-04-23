@@ -95,13 +95,16 @@ class Prince(Human):
 cinderella1 = Cinderella("Анна", 20, 35)
 cinderella2 = Cinderella("Марія", 22, 36)
 cinderella3 = Cinderella("Ольга", 25, 34)
+cinderella4 = Cinderella("Даша", 20, 35)
+cinderellas = [cinderella4, cinderella1, cinderella2, cinderella3]
 
 print('-' * 39)
 print('-' * 39)
-Cinderella.show_count()   # 3
+Cinderella.show_count()   # 4
 
 prince = Prince("Олександр", 30, 35)
-prince.find_cinderella([cinderella1, cinderella2, cinderella3])   # Знайдена попелюшка: Анна
+# prince.find_cinderella([cinderella1, cinderella2, cinderella3])   # Знайдена попелюшка: Анна
+prince.find_cinderella(cinderellas)   # Знайдена попелюшка: Даша
 
 """1) Створити абстрактний клас Printable якій буде описувати абстрактний метод print()
 2) Створити класи Book та Magazine в кожного в конструкторі змінна name, та якій наслідується від класу Printable
