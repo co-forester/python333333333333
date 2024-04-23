@@ -26,7 +26,7 @@ class Rectangle:
         return self.area() == other.area()
 
     def __ne__(self, other):
-        return not self == other
+        return not self.area() == other.area
 
     def __gt__(self, other):
         return self.area() > other.area()
