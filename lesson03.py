@@ -40,6 +40,7 @@ class Rectangle:
 # Приклад використання класу Rectangle:
 rect1 = Rectangle(4, 5)
 rect2 = Rectangle(3, 6)
+rect3 = Rectangle(8, 7)
 
 print("Площа першого прямокутника:", rect1.area())   # 20
 print("Площа другого прямокутника:", rect2.area())   # 18
@@ -51,6 +52,7 @@ print("Перший прямокутник більший за другий:", r
 print("Перший прямокутник меншій за другий:", rect1 < rect2)   # False
 print("Сума сторін першого прямокутника:", len(rect1))   # 9
 print("Сума сторін другого прямокутника:", len(rect2))   # 9
+print("Сума сторін другого прямокутника:", len(rect3))   # 15
 
 """створити клас Human (name, age)
 створити два класи Prince и Cinderella які наслідуються від Human:
