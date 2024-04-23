@@ -14,26 +14,26 @@ class Rectangle:
         self.y = y
         self.area = x * y
 
-    def area(self):
-        return self.x * self.y
+    # def area(self):
+    #     return self.x * self.y
 
     def __add__(self, other):
-        return self.area() + other.area()
+        return self.area + other.area
 
     def __sub__(self, other):
-        return abs(self.area() - other.area())
+        return abs(self.area - other.area)
 
     def __eq__(self, other):
-        return self.area() == other.area()
+        return self.area == other.area
 
     def __ne__(self, other):
-        return not self.area() == other.area
+        return not self.area == other.area
 
     def __gt__(self, other):
-        return self.area() > other.area()
+        return self.area > other.area
 
     def __lt__(self, other):
-        return self.area() < other.area()
+        return self.area < other.area
 
     def __len__(self):
         return self.x + self.y
@@ -43,8 +43,8 @@ rect1 = Rectangle(4, 5)
 rect2 = Rectangle(3, 6)
 rect3 = Rectangle(8, 7)
 
-print("Площа першого прямокутника:", rect1.area())   # 20
-print("Площа другого прямокутника:", rect2.area())   # 18
+# print("Площа першого прямокутника:", rect1.area)   # 20
+# print("Площа другого прямокутника:", rect2.area)   # 18
 print("Сума площин двох прямокутників:", rect1 + rect2)   # 38
 print("Різниця площин двох прямокутників:", rect1 - rect2)   # 2
 print("Чи рівні площини двох прямокутників:", rect1 == rect2)   # False
