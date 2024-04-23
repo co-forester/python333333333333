@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from typing import Self
+
 """Створити клас Rectangle:
 -він має приймати дві сторони x, y
 -описати поведінку на арифметичні методи:
@@ -17,26 +19,26 @@ class Rectangle:
     # def area(self):
     #     return self.x * self.y
 
-    def __add__(self, other):
+    def __add__(self, other: Self):
         return self.area + other.area
 
-    def __sub__(self, other):
+    def __sub__(self, other: Self):
         return abs(self.area - other.area)
 
-    def __eq__(self, other):
+    def __eq__(self, other: Self):
         return self.area == other.area
 
-    def __ne__(self, other):
+    def __ne__(self, other: Self):
         return not self.area == other.area
 
-    def __gt__(self, other):
+    def __gt__(self, other: Self):
         return self.area > other.area
 
-    def __lt__(self, other):
+    def __lt__(self, other: Self):
         return self.area < other.area
 
     def __len__(self):
-        return self.x + self.y
+        return (self.x + self.y) * 2
 
 # Приклад використання класу Rectangle:
 rect1 = Rectangle(4, 5)
@@ -51,9 +53,9 @@ print("Чи рівні площини двох прямокутників:", rec
 print("Чи нерівні площини двох прямокутників:", rect1 != rect2)  # True
 print("Перший прямокутник більший за другий:", rect1 > rect2)   # True
 print("Перший прямокутник меншій за другий:", rect1 < rect2)   # False
-print("Сума сторін першого прямокутника:", len(rect1))   # 9
-print("Сума сторін другого прямокутника:", len(rect2))   # 9
-print("Сума сторін іншого прямокутника:", len(rect3))   # 15
+print("Сума сторін першого прямокутника:", len(rect1))   # 18
+print("Сума сторін другого прямокутника:", len(rect2))   # 18
+print("Сума сторін іншого прямокутника:", len(rect3))   # 30
 
 """створити клас Human (name, age)
 створити два класи Prince и Cinderella які наслідуються від Human:
@@ -71,9 +73,9 @@ class Human:
 class Cinderella(Human):
     count = 0
 
-    def __init__(self, name, age, shoe_size):
+    def __init__(self, name, age, foot_size):
         super().__init__(name, age)
-        self.shoe_size = shoe_size
+        self.foot_size = foot_size
         Cinderella.count += 1
 
     @classmethod
@@ -85,9 +87,9 @@ class Prince(Human):
         super().__init__(name, age)
         self.shoe_size = shoe_size
 
-    def find_cinderella(self, cinderellas):
+    def find_cinderella(self, cinderellas: list[Cinderella]):
         for cinderella in cinderellas:
-            if cinderella.shoe_size == self.shoe_size:
+            if cinderella.foot_size == self.shoe_size:
                 print("Знайдена попелюшка:", cinderella.name)
                 return
         print("Попелюшка не знайдена")
@@ -157,11 +159,11 @@ class Magazine(Printable):
         print(f"Журнал: {self.name}")
 
 class Main:
-    printable_list = []
+    printable_list: list[Printable] = []
 
     @classmethod
     def add(cls, item):
-        if isinstance(item, (Book, Magazine)):
+        if isinstance(item, Printable):
             cls.printable_list.append(item)
         else:
             print("Помилка: Можна додавати лише книги та журнали")
